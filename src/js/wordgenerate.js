@@ -1,8 +1,12 @@
 const randomWord = async () => {
-  const response = await fetch("./src/js/data.json");
-  const data = await response.json();
-  const index = Math.floor(Math.random() * (data.length - 1));
-  return data[index];
+  try {
+    const response = await fetch("./src/js/data.json");
+    const data = await response.json();
+    const index = Math.floor(Math.random() * (data.length - 1));
+    return data[index];
+  } catch (error) {
+    console.error("error load data", error);
+  }
 };
 
 const shuffleArray = (array) => {

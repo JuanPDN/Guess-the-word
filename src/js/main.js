@@ -1,8 +1,27 @@
 import { randomWord, shuffleArray } from "./wordgenerate.js";
 
-const { word } = await randomWord();
-const array = word.split('')
+const guess = document.querySelector(".guess");
+const btnRandom = document.querySelector(".btn-random");
 
-console.log(array);
+const random = (array) => {
+  guess.innerHTML = "";
+  array.forEach((element) => {
+    const letter = document.createElement("span");
+    guess.appendChild(letter).textContent = element;
+  });
+};
 
-console.log(shuffleArray(array))
+const displayRandomWord = async () => {
+  try {
+    const { word } = await randomWord();
+    const array = word.split("");
+
+    shuffleArray(array);
+    random(array);
+  } catch (error) {
+    console.error("Error al obtener o procesar la palabra:", error);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", displayRandomWord);
+btnRandom.addEventListener("click", displayRandomWord);
