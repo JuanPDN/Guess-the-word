@@ -1,80 +1,50 @@
 [
-  {
-    "word": "apple"
-  },
-  {
-    "word": "banana"
-  },
-  {
-    "word": "carrot"
-  },
-  {
-    "word": "dog"
-  },
-  {
-    "word": "eleven"
-  },
-  {
-    "word": "flower"
-  },
-  {
-    "word": "grape"
-  },
-  {
-    "word": "hello"
-  },
-  {
-    "word": "igloo"
-  },
-  {
-    "word": "jelly"
-  },
-  {
-    "word": "kite"
-  },
-  {
-    "word": "lemon"
-  },
-  {
-    "word": "mango"
-  },
-  {
-    "word": "ninja"
-  },
-  {
-    "word": "orange"
-  },
-  {
-    "word": "peach"
-  },
-  {
-    "word": "queen"
-  },
-  {
-    "word": "rabbit"
-  },
-  {
-    "word": "seven"
-  },
-  {
-    "word": "tiger"
-  },
-  {
-    "word": "umbra"
-  },
-  {
-    "word": "viper"
-  },
-  {
-    "word": "water"
-  },
-  {
-    "word": "xylo"
-  },
-  {
-    "word": "yellow"
-  },
-  {
-    "word": "zebra"
-  }
+  { "word": "banana" },
+  { "word": "orange" },
+  { "word": "purple" },
+  { "word": "yellow" },
+  { "word": "animal" },
+  { "word": "turtle" },
+  { "word": "purple" },
+  { "word": "people" },
+  { "word": "guitar" },
+  { "word": "flower" },
+  { "word": "planet" },
+  { "word": "camera" },
+  { "word": "school" },
+  { "word": "rabbit" },
+  { "word": "sunset" },
+  { "word": "summer" },
+  { "word": "window" },
+  { "word": "coffee" },
+  { "word": "bottle" },
+  { "word": "friend" },
+  { "word": "family" },
+  { "word": "purple" },
+  { "word": "banana" },
+  { "word": "orange" },
+  { "word": "pencil" },
+  { "word": "summer" },
+  { "word": "camera" },
+  { "word": "planet" },
+  { "word": "people" },
+  { "word": "animal" },
+  { "word": "turtle" },
+  { "word": "guitar" },
+  { "word": "flower" },
+  { "word": "school" },
+  { "word": "rabbit" },
+  { "word": "coffee" },
+  { "word": "bottle" },
+  { "word": "sunset" },
+  { "word": "window" },
+  { "word": "pencil" },
+  { "word": "friend" },
+  { "word": "family" },
+  { "word": "banana" },
+  { "word": "orange" },
+  { "word": "purple" },
+  { "word": "yellow" },
+  { "word": "animal" },
+  { "word": "turtle" }
 ]
