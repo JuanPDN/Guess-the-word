@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,66 @@
     <link rel="stylesheet" href="./src/style/output.css">
     <title>Guess the word</title>
 </head>
-<body class="font-Outfit bg-guess bg-cover">
-    
+
+<body class="font-Outfit h-screen w-auto bg-guess bg-cover bg-center bg-no-repeat flex justify-center items-center">
+
+    <div class="bg-gradient-to-br from-030616 to-20293A flex flex-col items-center px-8 rounded-xl m-3">
+        <img class="py-7" src="./src/assets/Word Scramblle.svg" alt="logo">
+        <p class="bg-4A5567 text-97A3B6 text-[2rem] px-24 py-2 rounded-md text-center tracking-widest">
+            <span>r</span>
+            <span>e</span>
+            <span>l</span>
+            <span>o</span>
+            <span>w</span>
+            <span>f</span>
+        </p>
+        <div>
+            <div class="flex text-4A5567 text-xs gap-14 py-5">
+                <div class="flex items-center gap-2">
+                    <p>Tries (4/5):</p>
+                    <ul class="list-none flex gap-[0.3rem]">
+                        <li class="size-[0.4rem] bg-7429C6 rounded-full"></li>
+                        <li class="size-[0.4rem] bg-7429C6 rounded-full"></li>
+                        <li class="size-[0.4rem] bg-7429C6 rounded-full"></li>
+                        <li class="size-[0.4rem] bg-7429C6 rounded-full"></li>
+                        <li class="size-[0.4rem] bg-4A5567 rounded-full"></li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-1">
+                    <p>Mistakes:</p>
+                    <p class="text-97A3B6 text-base">a, e, w, t</p>
+                </div>
+            </div>
+            <div class="flex justify-center gap-2 text-F2F5F9 text-xl caret-[transparent] py-6 w-full">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="2" id="2" maxlength="1">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="1" id="1" maxlength="1">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="3" id="3" maxlength="1">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="4" id="4" maxlength="1">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="5" id="5" maxlength="1">
+                <input
+                    class="size-10 rounded-md text-center outline-none focus:border-672171 bg-transparent border-2 border-4A5567"
+                    type="text" name="6" id="6" maxlength="1">
+            </div>
+            <div class="py-7 text-F2F5F9 text-sm gap-[1.7rem] flex justify-around">
+                <input class="bg-C951E7 hover:bg-672171 px-9 py-2 rounded-lg border-b-4 border-672171" type="button"
+                    value="Random">
+                <input class="bg-C951E7 hover:bg-672171 px-9 py-2 rounded-lg border-b-4 border-672171" type="button"
+                    value="Reset">
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="./src/js/main.js"></script>
+
 </html>
