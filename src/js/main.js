@@ -9,26 +9,37 @@ const mistakes = document.querySelector(".mistakes");
 const btnReset = document.querySelector(".btn-reset");
 
 let result = [];
-let errors = 0;
-let mistake = ""
+let counter = 0;
+let mistake = "";
 const answer = [];
 
 const validation = () => {
   if (answer.length === 6) {
     for (let i = 0; i < 6; i++) {
       if (answer[i] !== result[i]) {
-        errors++;
-        updateTries();
+        if (mistake === "") {
+          mistake = `${answer[i]}`;
+        } else {
+          mistake = `${mistake}, ${answer[i]}`;
+        }
+        updateMistakes();
         return;
       }
     }
+    counter++;
+    updateTries();
   }
 };
 
 const updateTries = () => {
-  tries.textContent = `Tries (${errors}/5)`;
-  listTries[errors-1].classList.add("bg-7429C6");
+  tries.textContent = `Tries (${counter}/5)`;
+  listTries[counter - 1].classList.add("bg-7429C6");
+  displayRandomWord()
 };
+
+const updateMistakes = () => {
+    mistakes.textContent = mistake;
+}
 
 const random = (array) => {
   guess.innerHTML = "";
