@@ -7,7 +7,7 @@ module.exports = {
         Outfit: ['"Outfit"', "sans-serif"],
       },
       backgroundImage: {
-        guess: 'url("../assets/bg-guess-the-word.png")',
+        guess: 'url("../src/assets/bg-guess-the-word.png")',
       },
       colors: {
         "7429C6": "#7429C6",
