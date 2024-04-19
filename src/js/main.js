@@ -110,7 +110,7 @@ const resetAll = () => {
 
 inputs.forEach((element, index) => {
   element.addEventListener("input", () => {
-    answer[index] = element.value;
+    answer[index] = element.value.toLowerCase();
     if (element.value.length === 1) {
       if (index < inputs.length - 1) {
         inputs[index + 1].focus();
