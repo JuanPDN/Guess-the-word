@@ -7,9 +7,11 @@ const tries = document.querySelector(".tries");
 const listTries = document.querySelectorAll("li");
 const mistakes = document.querySelector(".mistakes");
 const btnReset = document.querySelector(".btn-reset");
+const body = document.querySelector("body");
 
 let result = [];
 let counter = 0;
+let errors = 0;
 let mistake = "";
 const answer = [];
 
@@ -22,24 +24,59 @@ const validation = () => {
         } else {
           mistake = `${mistake}, ${answer[i]}`;
         }
+        errors++;
         updateMistakes();
+        resetInputs();
         return;
       }
     }
     counter++;
     updateTries();
+    resetInputs();
   }
 };
 
+const status = {
+  win: "🎉  Winner!!",
+  losse: "😓 You losse",
+};
+
+const winOrLosse = () => {
+  if (errors === 6 || counter === 6) {
+    const resultMessage = errors === 6 ? status.losse : status.win;
+    const message = `
+        <div class="message absolute bg-F2F5F9 shadow-[0_0_0_100vh_rgb(0,0,0,0.3)]
+        p-14 text-6xl rounded-xl m-4">${resultMessage}</div>`;
+    body.insertAdjacentHTML("beforeend", message);
+    setTimeout(() => {
+      document.querySelector(".message").remove();
+      resetAll();
+    }, 2000);
+  }
+};
+
+const resetInputs = () => {
+  inputs.forEach((e) => {
+    e.value = "";
+  });
+  inputs[0].focus();
+};
+
 const updateTries = () => {
-  tries.textContent = `Tries (${counter}/5)`;
-  listTries[counter - 1].classList.add("bg-7429C6");
-  displayRandomWord()
+  tries.textContent = `Tries (${counter}/6)`;
+  if (counter === 0) {
+    listTries.forEach((e) => {
+      e.classList.remove("bg-7429C6");
+    });
+  } else {
+    listTries[counter - 1].classList.add("bg-7429C6");
+  }
+  displayRandomWord();
 };
 
 const updateMistakes = () => {
-    mistakes.textContent = mistake;
-}
+  mistakes.textContent = mistake;
+};
 
 const random = (array) => {
   guess.innerHTML = "";
@@ -62,6 +99,15 @@ const displayRandomWord = async () => {
   }
 };
 
+const resetAll = () => {
+  counter = 0;
+  errors = 0;
+  mistake = "";
+  updateMistakes();
+  updateTries();
+  resetInputs();
+};
+
 inputs.forEach((element, index) => {
   element.addEventListener("input", () => {
     answer[index] = element.value;
@@ -71,6 +117,7 @@ inputs.forEach((element, index) => {
       } else {
         element.blur();
         validation();
+        winOrLosse();
       }
     }
   });
@@ -87,3 +134,4 @@ inputs.forEach((element, index) => {
 
 document.addEventListener("DOMContentLoaded", displayRandomWord);
 btnRandom.addEventListener("click", displayRandomWord);
+btnReset.addEventListener("click", resetAll);
