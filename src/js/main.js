@@ -27,12 +27,13 @@ const validation = () => {
         errors++;
         updateMistakes();
         resetInputs();
+        updateTries();
         return;
       }
     }
     counter++;
-    updateTries();
     resetInputs();
+    displayRandomWord();
   }
 };
 
@@ -42,7 +43,7 @@ const status = {
 };
 
 const winOrLosse = () => {
-  if (errors === 6 || counter === 6) {
+  if (errors === 6 || counter === 10) {
     const resultMessage = errors === 6 ? status.losse : status.win;
     const message = `
         <div class="message absolute bg-F2F5F9 shadow-[0_0_0_100vh_rgb(0,0,0,0.3)]
@@ -63,15 +64,14 @@ const resetInputs = () => {
 };
 
 const updateTries = () => {
-  tries.textContent = `Tries (${counter}/6)`;
-  if (counter === 0) {
+  tries.textContent = `Tries (${errors}/6)`;
+  if (errors === 0) {
     listTries.forEach((e) => {
       e.classList.remove("bg-7429C6");
     });
   } else {
-    listTries[counter - 1].classList.add("bg-7429C6");
+    listTries[errors - 1].classList.add("bg-7429C6");
   }
-  displayRandomWord();
 };
 
 const updateMistakes = () => {
